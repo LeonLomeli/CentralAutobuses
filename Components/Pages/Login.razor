@@ -1,0 +1,18 @@
+@page "/login"
+<PageTitle>Login</PageTitle>
+
+<h3>Iniciar sesión</h3>
+
+<div>
+    <label>Usuario:</label>
+    <input @bind="user" />
+</div>
+
+<div>
+    <label>Contraseña:</label>
+    <input type="password" @bind="password" />
+</div>
+
+<button @onclick="IntentarLogin">Entrar</button>
+
+<p>@message</p>
