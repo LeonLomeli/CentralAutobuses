@@ -1,7 +1,20 @@
 ﻿@page "/"
+@using CentralAutobuses.Services
+@inject IAuthState AuthState
+@inject NavigationManager NavManager
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>`CENTRAL DE AUTOBUSES</h1>
 
-Welcome to your new app.
+BIENVENIDO A LA CENTRAL DE AUTOBUSES
+
+@code {
+    protected override void OnInitialized()
+    {
+        if (!AuthState.IsLoggedIn)
+        {
+            NavManager.NavigateTo("/login");
+        }
+    }
+}

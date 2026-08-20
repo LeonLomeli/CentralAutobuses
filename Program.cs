@@ -1,8 +1,11 @@
 using CentralAutobuses.Components;
+using CentralAutobuses.Services;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddSingleton<IAuthState, AuthState>();
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
